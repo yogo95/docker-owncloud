@@ -73,6 +73,7 @@ RUN apk update && \
     php7-posix \
     php7-imap \
     php7-calendar \
+    php7-pcntl \
     #
     # Install Apache2 for php
     #
