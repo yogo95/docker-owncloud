@@ -11,17 +11,6 @@ services:
       OC_DISABLE_ENSURE_APPS_RIGHT: 'true'
     ports:
       - "3000:80"
-    volumes:
-      - type: bind
-        source: ./tmp/apache2
-        target: /var/log/apache2
-      - type: bind
-        source: ./tmp/owncloud/config.php
-        target: /var/www/localhost/htdocs/config/config.php
   mysql:
     image: mysql:5.7.21
     restart: always
-    volumes:
-      - type: bind
-        source: ./tmp/mysql/data
-        target: /var/lib/mysql

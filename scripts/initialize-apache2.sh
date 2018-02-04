@@ -10,6 +10,8 @@ fi
 
 echo "[$LOG_PREFIX] Setting server name to '$apache_server_name'"
 sed -i "s/#ServerName www.example.com:80/ServerName $apache_server_name/" /etc/apache2/httpd.conf
+sed -i "s/#\?ServerSignature .*/ServerSignature Off/" /etc/apache2/httpd.conf
+sed -i "s/AllowOverride None/AllowOverride All/" /etc/apache2/httpd.conf
 
 echo "[$LOG_PREFIX] Enforce directory /run/apache2 to exists"
 mkdir -p /run/apache2
